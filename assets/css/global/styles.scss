@@ -50,6 +50,13 @@ body, html {
             flex-direction: column;
             justify-content: center;
             align-items: center;
+
+            @media (max-width: 1080px) {
+                width: 80%;
+            }
+            @media (max-width: 680px) {
+                width: 100%;
+            }
         }
     }
     .main-bottom {
@@ -84,6 +91,7 @@ body, html {
             .img-wrapper {
                 width: 20px;
                 height: 20px;
+                cursor: pointer;
 
                 img {
                     width: 100%;

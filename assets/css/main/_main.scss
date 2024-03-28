@@ -18,7 +18,9 @@ main {
             font-size: 30px;
             color: var(--White);
             font-weight: bold;
-            letter-spacing: 5PX;
+            letter-spacing: 5px;
+            text-align: center;
+            line-height: 50px;
         }
     }
 
@@ -27,6 +29,13 @@ main {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media (max-width: 680px) {
+            justify-content: center;
+            gap: 20px;
+        }
+        @media (max-width: 500px) {
+            gap: 20px;
+        }
 
         .timer-wrapper {
             width: 120px;
@@ -36,6 +45,10 @@ main {
             justify-content: space-between;
             align-items: center;
             gap: 20px;
+            @media (max-width: 680px) {
+                width: 20%;
+                height: fit-content;
+            }
 
             .timer {
                 width: 100%;
@@ -104,6 +117,11 @@ main {
                     color: var(--Grayish-blue);
                     letter-spacing: 3px;
                     font-weight: bold;
+
+                    @media (max-width: 680px) {
+                        font-size: 14px;
+                        letter-spacing: 0;
+                    }
                 }
             }
         }

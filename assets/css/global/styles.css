@@ -73,13 +73,26 @@ main .timer-title h1 {
   font-size: 30px;
   color: var(--White);
   font-weight: bold;
-  letter-spacing: 5PX;
+  letter-spacing: 5px;
+  text-align: center;
+  line-height: 50px;
 }
 main .countdown-timer {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media (max-width: 680px) {
+  main .countdown-timer {
+    justify-content: center;
+    gap: 20px;
+  }
+}
+@media (max-width: 500px) {
+  main .countdown-timer {
+    gap: 20px;
+  }
 }
 main .countdown-timer .timer-wrapper {
   width: 120px;
@@ -90,6 +103,13 @@ main .countdown-timer .timer-wrapper {
   justify-content: space-between;
   align-items: center;
   gap: 20px;
+}
+@media (max-width: 680px) {
+  main .countdown-timer .timer-wrapper {
+    width: 20%;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
 }
 main .countdown-timer .timer-wrapper .timer {
   width: 100%;
@@ -156,6 +176,12 @@ main .countdown-timer .timer-wrapper .timer-name p {
   letter-spacing: 3px;
   font-weight: bold;
 }
+@media (max-width: 680px) {
+  main .countdown-timer .timer-wrapper .timer-name p {
+    font-size: 14px;
+    letter-spacing: 0;
+  }
+}
 
 :root {
   --Grayish-blue: hsl(237, 18%, 59%);
@@ -208,6 +234,16 @@ body, html {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 1080px) {
+  .container .main-top main {
+    width: 80%;
+  }
+}
+@media (max-width: 680px) {
+  .container .main-top main {
+    width: 100%;
+  }
+}
 .container .main-bottom {
   width: 100%;
   height: 30%;
@@ -241,6 +277,7 @@ body, html {
 .container .main-bottom .social-medya-container .img-wrapper {
   width: 20px;
   height: 20px;
+  cursor: pointer;
 }
 .container .main-bottom .social-medya-container .img-wrapper img {
   width: 100%;
