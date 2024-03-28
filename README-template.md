@@ -1,112 +1,91 @@
-# Frontend Mentor - Launch countdown timer solution
+# Ip Adresi Izleyici
 
-This is a solution to the [Launch countdown timer challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/launch-countdown-timer-N0XkGfyz-). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+- Bu projede 14 günden geri sayan bir zamanlayıcı mevcut. Herhangi bir etkileşimi yoktur.Saniye yani second 60' tan geriye sayıyor ve her 1 saniye azaldığında divlerin pozisyonu değişen bir animasyonu mevcut. Bu diğer zaman öğreleri içinde geçerlidir.
 
-## Table of contents
+### Ekran Görüntüsü
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
-## Overview
-
-### The challenge
-
-Users should be able to:
-
-- See hover states for all interactive elements on the page
-- See a live countdown timer that ticks down every second (start the count at 14 days)
-- **Bonus**: When a number changes, make the card flip from the middle
-
-### Screenshot
-
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Ekran Görüntüsü](./assets/images/Ekran%20Alıntısı.PNG)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Site Url'i: [Count-Down-Timer](https://brkcnulusy.github.io/Count-Down-Timer/)
 
-## My process
+### Meydan okuma
 
-### Built with
+Kullanıcılar şunları yapabilmelidir:
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- Sayfadaki tüm etkileşimli öğeler için fareyle üzerine gelme durumlarını görme.
+- Her saniye geri sayan canlı bir geri sayım sayacı görün (sayımı 14 günden başlatın).
+- **Bonus**: Bir sayı değiştiğinde, kartı ortadan çevirin.
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+### Genel Bakış
 
-### What I learned
+- Javascript kodları ifee fonksiyonları içine yazılmıştır. Sonrada ekleme yada geliştirme yapacak kişiler dikkat etmelidir.
+- Responsive tasarımı mevcut olup farklı cihazlarda da görüntü bozulmamaktadır.
+- Css kodları scss şeklinde yazılmıştır. Ekleme yada geliştirme yapacak kişi style.scss dosyasını compile etmelidir.
+- Js ve CSS kodları modüler olarak yazılmıştır.
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+### Ne Öğrendim
 
-To see how you can add code snippets, see below:
+- Daha önce hiç animasyon kullanmamıştım. Bu uygulamada animasyon kullanarak sayaçtaki sayılar değiştiğinde ortadan sayfa değişrir gibi bir animasyon ekledim.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.half-width {
+  width: 100%;
+  height: 50%;
+  transition: transform 0.5s ease-in-out;
+  background-color: var(--Dark-desaturated-blue);
 }
 ```
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+let rotationAngle = 0;
+
+export const _updateUI = function (element, content, topPart, bottomPart) {
+  rotationAngle += 180;
+  topPart.style.transform = `rotateX(${rotationAngle}deg)`;
+  bottomPart.style.transform = `rotateX(${rotationAngle}deg)`;
+  if (content < 10) {
+    element.innerHTML = "0" + content;
+  } else {
+    element.innerHTML = content;
+  }
+};
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+### İle İnşa Edilmiştir
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+- HTML5
+- CSS
+- Flexbox
+- SCSS
+- Mobil Tasarım
+- JavaScript
 
-### Continued development
+## Kurulum
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+1. Projeyi Kopyalayın
+   İlk olarak, projeyi yerel bilgisayarınıza kopyalamk için GitHub'dan klonlayın:
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+```bash
+git clone https://github.com/Brkcnulusy/Count-Down-Timer.git
+cd Count-Down-Timer
+```
 
-### Useful resources
+2. Bağımlılıkları Yükleyin
+   Herhangi bir Bağlılığı bulunmamaktır. Projece vanilya.js ile yazılmıştır.
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+3. Uygulamayı Çalıştırın
+   Eğer Live Server uzantısı yüklü ise html dosyasına sağ tıklayıp ilk seçenek olan Live Server ile Açın seçeneğine tıklayıp açabilirsiniz.
+   Live Server uzantısına sahip değilseniz terminale npm run dev yazarak ve Tarayıcınızda http://localhost:3000 adresine giderek uygulamayı kullanmaya başlayabilirsiniz.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+## Yazar
 
-## Author
+- Website - [Burak Can Ulusoy](https://mavifloravakfi.com/)
+- LinkedIn - [@Brkcnulusy](https://www.linkedin.com/in/burak-can-ulusoy-375120272/)
+- GitHub - [@Burakcnulusy](https://github.com/Brkcnulusy/)
+- E-Mail - [brkcnulusy@gmail.com]
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+## Teşekkür
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+Bu projeyi frontend mentor adlı sitede gördüm ve yapmaya karar verdim. Site proje için gerekli olan tasarım resimleri ve sitede kullanmam gereken image dosyalarını benimle paylaştı. Frontend Mentor Ekibine teşekkür ederim.
