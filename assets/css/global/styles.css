@@ -1,0 +1,249 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+main {
+  z-index: 9;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+main .timer-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .timer-title h1 {
+  font-size: 30px;
+  color: var(--White);
+  font-weight: bold;
+  letter-spacing: 5PX;
+}
+main .countdown-timer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .countdown-timer .timer-wrapper {
+  width: 120px;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+main .countdown-timer .timer-wrapper .timer {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+main .countdown-timer .timer-wrapper .timer span {
+  z-index: 9;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  color: var(--Soft-red);
+  font-weight: bold;
+}
+main .countdown-timer .timer-wrapper .timer .half-width {
+  width: 100%;
+  height: 50%;
+  transition: transform 0.5s ease-in-out;
+  background-color: var(--Dark-desaturated-blue);
+}
+main .countdown-timer .timer-wrapper .timer .timer-up {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+main .countdown-timer .timer-wrapper .timer .timer-down {
+  border-top: 1px solid var(--Very-dark-mostly-black-blue);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+main .countdown-timer .timer-wrapper .timer .middle-trim-left {
+  width: 10px;
+  height: 10px;
+  background-color: var(--Very-dark-mostly-black-blue);
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+main .countdown-timer .timer-wrapper .timer .middle-trim-right {
+  width: 10px;
+  height: 10px;
+  background-color: var(--Very-dark-mostly-black-blue);
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+main .countdown-timer .timer-wrapper .timer-name {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .countdown-timer .timer-wrapper .timer-name p {
+  color: var(--Grayish-blue);
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+:root {
+  --Grayish-blue: hsl(237, 18%, 59%);
+  --Soft-red: hsl(345, 95%, 68%);
+  --White: hsl(0, 0%, 100%);
+  --Dark-desaturated-blue: hsl(236, 21%, 26%);
+  --Very-dark-blue: hsl(235, 16%, 14%);
+  --Very-dark-mostly-black-blue: hsl(234, 17%, 12%);
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: "Red Hat Text", sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--Very-dark-blue);
+}
+.container .main-top {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.container .main-top .background-top-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+.container .main-top main {
+  z-index: 9;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .main-bottom {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.container .main-bottom .background-bottom-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+.container .main-bottom .social-medya-container {
+  padding-top: 50px;
+  z-index: 9;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.container .main-bottom .social-medya-container .img-wrapper {
+  width: 20px;
+  height: 20px;
+}
+.container .main-bottom .social-medya-container .img-wrapper img {
+  width: 100%;
+  height: 100%;
+  inset: 0;
+}/*# sourceMappingURL=styles.css.map */
